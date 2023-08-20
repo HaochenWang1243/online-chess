@@ -1,0 +1,23 @@
+<%- include('../include/header.ejs') %>
+<div class="container">
+    <%- include('../include/partials/responseMessage.ejs') %>
+    <form action="/api/login" method='POST' class="flex-center-column auth-form">
+        <h1 class="flex-center-row">Login <img src="/assets/icons/user-plus.svg" alt="User"></h1>
+        <div class="input-group">
+            <label>Email</label>
+            <input type="email" name="email" placeholder="Enter your email">
+        </div>
+
+        <div class="input-group">
+            <label>Password</label>
+            <input type="password" name="password" placeholder="Enter your password">
+        </div>
+
+        <a href="/register" class="redirect-link">Don't have an account?</a>
+
+        <button type="submit" name="submit">Submit</button>
+    </form> <!--submit form to http://localhost:5000/api/register-->
+</div>
+<script src="js/responseMessage.js"></script>
+<%- include('../include/footer.ejs') %>
+

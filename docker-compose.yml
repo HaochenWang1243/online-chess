@@ -1,0 +1,37 @@
+# From the documentation(https://hub.docker.com/_/mysql/)...
+
+# MYSQL_USER, MYSQL_PASSWORD
+# These variables are optional, used in conjunction to create a new user and to set that user's password. This user will be granted superuser permissions (see above) for the database specified by the MYSQL_DATABASE variable. Both variables are required for a user to be created.
+# So this is to create a new user with a password. 
+
+# MYSQL_DATABASE
+# This variable is optional and allows you to specify the name of a database to be created on image startup. If a user/password was supplied (see below) then that user will be granted superuser access (corresponding to GRANT ALL) to this database.
+
+# MYSQL_ROOT_PASSWORD 
+# is the password for the root user of MySQL.
+# This variable is mandatory and specifies the password that will be set for the MySQL root superuser account. In the above example, it was set to my-secret-pw.
+
+services:
+  mysql_db:
+    image: mysql
+    volumes:
+      - ./docker-mysql-volume:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_DATABASE: "online_chess"
+      MYSQL_USER: "user"
+      MYSQL_PASSWORD: "pass"
+    ports:
+      - 42333:3306
+
+  redis:
+    image: redis:6.2-alpine
+    volumes: 
+      - ./docker_redis_volume:/data
+    ports:
+      - 6379:6379
+    environment:
+      REDIS_HOST: "cache"
+      REDIS_PORT: 6379
+    # restart: always
+    # command: redis-server --save 20 1 --loglevel warning --requirepass eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81

@@ -1,0 +1,4 @@
+node_modules
+.env
+docker_redis_volume
+docker-mysql-volume
