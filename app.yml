@@ -12,7 +12,7 @@ services:
       MYSQL_HOST: mysql
       MYSQL_PASSWORD: password
       MYSQL_DATABASE: online_chess
-      MYSQL_PORT: 3306
+      MYSQL_PORT: 3307
       JWT_SECRET: asgf97q9g9G9G9GFA90saf0ag083h0ahg
       REDIS_HOST: redis
     restart: always
