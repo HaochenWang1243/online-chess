@@ -10,12 +10,12 @@ const database=process.env.MYSQL_DATABASE
 const port=process.env.MYSQL_PORT
 
 const db=mysql.createConnection({
-    // user:'root',
-    // password:'root',
-    // host:'127.0.0.1',
-    // database:'online_chess',
-    // port:'42333'
-    user,host,password,database,port
+    user:'root',
+    password:'root',
+    host:'34.123.244.180',
+    database:'online_chess',
+    port:'3306'
+    // user,host,password,port,database
 })
 
 module.exports = db

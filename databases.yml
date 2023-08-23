@@ -27,3 +27,16 @@ services:
 volumes:
   mysqldata:
   redisdata:
+
+
+# Digital ocean's droplet doesn't work....
+
+
+# GCP VM:
+  # sudo echo "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+  
+  # sudo docker-compose -f databases.yml up -d
+  
+  # sudo apt-get update && sudo apt-get install mysql-server
+  # sudo service mysql start
+  # sudo mysql --host=127.0.0.1 --port=3307 --user=testuser --password=password online_chess : not using 'localhost' but '127.0.0.1' is essential for avoiding the var/run/...socket (2) error
